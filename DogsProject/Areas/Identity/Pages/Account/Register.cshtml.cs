@@ -104,7 +104,7 @@ namespace DogsProject.Areas.Identity.Pages.Account
 
                 if (result.Succeeded)
                 {
-
+                    await _userManager.AddToRoleAsync(user, "Client");
                     await _signInManager.SignInAsync(user, isPersistent: false);
                     return LocalRedirect(returnUrl);
                    
